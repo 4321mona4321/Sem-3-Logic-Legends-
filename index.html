@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Indian Tourism</title>
+</head>
+<body>
+    <header>
+        <h1>Indian Tourism</h1><!--this project is done by mona.m.n(B.tech-ds&ai)-->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="hotels.html">Hotels & Flights</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-content">
+        <h1><u>Welcome to Indian Tourism</u></h1>
+        <h2><b>Explore the diverse and beautiful destinations of India.</b></h2>
+        <p>If you are looking for the best deals while travelling across the globe, begin planning with Explore India and enjoy wandering around the most iconic places of the country. Providing services to travel all over the world has never been so easy, but we assure you best deals for the price. You will get varied options to select from and enjoy a safe, comfortable, and relaxing tour.</p>
+
+        
+        <!-- Registration form for names and reviews -->
+        <form id="reviewForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="review">Review:</label>
+            <textarea id="review" name="review" required></textarea>
+
+            <button type="button" onclick="submitReview()">Submit Review</button>
+        </form>
+
+        <!-- Display reviews -->
+        <div id="reviewsContainer">
+            <!-- Reviews will be dynamically added here using JavaScript -->
+        </div>
+        
+    </div>
+
+        <style>
+        .slider-container {
+            overflow: hidden;
+            width: 80%; /* Adjust the width as needed */
+            height: 300px; /* Adjust the height as needed */
+            margin: auto;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%; /* Make the slider take the full height of the container */
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%; /* Make the images take the full width of the slide */
+            height: 100%; /* Make the images take the full height of the slide */
+            object-fit: cover; /* Maintain the aspect ratio and cover the entire slide */
+        }
+    </style>
+</head>
+<h2>Exotic Places Of India</h2>
+<p>India offers wonderful vacation experiences thanks to its diverse fauna, topography, and cultural heritage. As its name implies, Explore India is a travel agency that can help you organize any journey around India by offering its curated services for each client requirements. We are one of the best and most reputable travel agencies in India, serving clients from all over the world. </p>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="taj.jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="sat.jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="qut.jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="pan.jpg" alt="Image 3">
+            </div>
+            <div class="slide">
+                <img src="tir.jpg" alt="Image 4">
+            </div>
+            <div class="slide">
+                <img src="jai.jpg" alt="Image 5">
+            </div>
+            <div class="slide">
+                <img src="dal.jpg" alt="Image 6">
+            </div>
+            <div class="slide">
+                <img src="thi.jpg" alt="Image 7">
+            </div>
+            <div class="slide">
+                <img src="kera.jpg" alt="Image 8">
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+    </div>
+    <br></br>
+    <h4>Offical website of govtofindia:</h4>
+    <a href="https://www.incredibleindia.org/content/incredible-india-v2/en.html">Incredible India</a>
+    <h3 ><b>Play the Video to see what you can do in India!!</b></h3>
+        <video width="800" height="500" controls autoplay>
+        <source src="vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <script>
+        const slider = document.querySelector('.slider');
+        let slideIndex = 0;
+
+        function showSlides() {
+            slideIndex++;
+            if (slideIndex >= slider.children.length) {
+                slideIndex = 0;
+            }
+
+            const translateValue = -slideIndex * 100 + '%';
+            slider.style.transform = 'translateX(' + translateValue + ')';
+        }
+
+        setInterval(showSlides, 2000); // Change slide every 2 seconds (adjust as needed)
+    </script>
+    </section>
+    <br></br>
+
+    <footer>
+        <p>&copy; logic legends-2023 Indian Tourism</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
