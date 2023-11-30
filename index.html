@@ -137,5 +137,44 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function submitReview() {
+            const nameInput = document.getElementById('name');
+            const reviewInput = document.getElementById('review');
+
+            const name = nameInput.value;
+            const review = reviewInput.value;
+
+            if (name && review) {
+                // Add the review to the array
+                const reviewElement = document.createElement('div');
+                reviewElement.innerHTML = `<strong>${name}</strong>: ${review}`;
+                document.getElementById('reviewsContainer').appendChild(reviewElement);
+
+                // Clear the form inputs
+                nameInput.value = '';
+                reviewInput.value = '';
+
+                // TODO: Send the review data to the server (MySQL) using fetch or XMLHttpRequest
+                fetch('/submitReview', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, review }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Review submitted successfully:', data);
+                })
+                .catch(error => {
+                    console.error('Error submitting review:', error);
+                });
+            } else {
+                alert('Name and review are required');
+            }
+        }
+    </script>
+
 </body>
 </html>
